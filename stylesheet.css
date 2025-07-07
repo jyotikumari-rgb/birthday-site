@@ -1,0 +1,244 @@
+
+body {
+	background-color: #000;
+	-webkit-transition: background-color linear 5s;
+	-moz-transition: background-color linear 5s;
+	-o-transition: background-color linear 5s;
+	-ms-transition: background-color linear 5s;
+	transition: background-color linear 5s;
+	overflow-x: hidden;
+}
+
+.container {
+	display: block;
+}
+
+.peach {
+	background-color: #FFDAB9;
+}
+
+.peach-after {
+	animation: peach_alive linear 8s infinite;
+}
+
+@keyframes peach_alive {
+	0% { background-color: #FFDAB9; }
+	25% { background-color: #FFE4B5; }
+	50% { background-color: #FFDAB9; }
+	75% { background-color: #FFEFD5; }
+	100% { background-color: #FFDAB9; }
+}
+
+/* Bulbs */
+.bulb {
+	width: 50px;
+	height: 50px;
+	margin: auto;
+	background-repeat: no-repeat;
+	background-position: center 0px;
+	background-size: 50px 50px;
+}
+.bulb-holder {
+	height: 70px;
+}
+
+/* Bulb glow animations */
+@keyframes bulb_glow_yellow { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:1;} }
+@keyframes bulb_glow_red { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:1;} }
+@keyframes bulb_glow_blue { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:1;} }
+@keyframes bulb_glow_green { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:1;} }
+@keyframes bulb_glow_pink { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:1;} }
+@keyframes bulb_glow_orange { 0%{opacity:0;} 50%{opacity:1;} 100%{opacity:1;} }
+
+.bulb-glow-yellow { animation: bulb_glow_yellow 5s linear; background-image: url('bulb_yellow.png'); }
+.bulb-glow-red { animation: bulb_glow_red 5s linear; background-image: url('bulb_red.png'); }
+.bulb-glow-blue { animation: bulb_glow_blue 5s linear; background-image: url('bulb_blue.png'); }
+.bulb-glow-green { animation: bulb_glow_green 5s linear; background-image: url('bulb_green.png'); }
+.bulb-glow-pink { animation: bulb_glow_pink 5s linear; background-image: url('bulb_pink.png'); }
+.bulb-glow-orange { animation: bulb_glow_orange 5s linear; background-image: url('bulb_orange.png'); }
+
+/* Audio */
+audio {
+	display: none;
+}
+
+/* 🎉 Banner styling - Hidden by default, appears on "Let's Decorate" */
+.bannar {
+	display: none;
+	max-width: 40%;
+	margin: 20px auto;
+	transform: translate(0px, -500px);
+	transition: transform 1s ease-in-out;
+}
+
+/* Banner animation on click */
+.bannar-come {
+	display: block !important;
+	animation: bannar_come linear 6s forwards;
+}
+
+@keyframes bannar_come {
+	0% { transform: translate(0px, -1000px); }
+	33% { transform: translate(0px, 0px) rotate(10deg); }
+	66% { transform: translate(0px, 100px) rotate(-10deg); }
+	100% { transform: translate(0px, 0px); }
+}
+
+/* 🎈 Balloons */
+.balloons {
+	position: fixed;
+	bottom: -200px;
+	opacity: 0.6;
+	z-index: 99;
+	width: 100px;
+	height: 183px;
+	background-repeat: no-repeat;
+	background-size: 100px 183px;
+}
+.balloons h2 {
+	text-transform: uppercase;
+	font-family: 'Signika', sans-serif;
+	font-size: 50px;
+	color: #BF4136;
+	text-shadow: 5px 5px 5px #FFF;
+	display: none;
+}
+#b1,#b11 { background-image: url('b1.png'); }
+#b2,#b22 { background-image: url('b2.png'); }
+#b3,#b33 { background-image: url('b3.png'); }
+#b4,#b44 { background-image: url('b4.png'); }
+#b5,#b55 { background-image: url('b5.png'); }
+#b6,#b66 { background-image: url('b6.png'); }
+#b7,#b77 { background-image: url('b7.png'); }
+
+.balloons-rotate-behaviour-one {
+	animation: balloons_rotate_one linear 10s infinite;
+	transform: rotate(30deg);
+}
+@keyframes balloons_rotate_one {
+	0% { transform: rotate(30deg); }
+	50% { transform: rotate(-30deg); }
+	100% { transform: rotate(30deg); }
+}
+.balloons-rotate-behaviour-two {
+	animation: balloons_rotate_two linear 10s infinite;
+	transform: rotate(-20deg);
+}
+@keyframes balloons_rotate_two {
+	0% { transform: rotate(-20deg); }
+	50% { transform: rotate(20deg); }
+	100% { transform: rotate(-20deg); }
+}
+
+.balloon-border {
+	position: fixed;
+	top: 100%;
+	opacity: 0.5;
+	z-index: 9999;
+}
+
+/* 🍰 Cake cover */
+.cake-cover {
+	margin-top: 60px;
+}
+.cake {
+	position: absolute;
+	display: none;
+	left: 50%;
+	margin-left: -150px;
+	width: 300px;
+	height: 300px;
+}
+
+/* 🎉 Messages */
+.message {
+	position: absolute;
+	top: 180px;               /* aligns vertically near the banner */
+	right: 50px;              /* aligns to the right side */
+	width: 400px;
+	display: none;
+	text-align: left;
+	z-index: 999;
+}
+.message p {
+	font-family: 'Signika', sans-serif;
+	font-size: 26px;
+	text-transform: uppercase;
+	color: #C4515C;
+	text-shadow: 2px 2px 2px #FFF;
+	display: none;
+	font-weight: bold;
+	line-height: 1.6;
+}
+
+/* 🔘 Buttons */
+.btn-primary {
+	border-color: #466baf;
+	padding: 10px;
+	text-transform: uppercase;
+	font-family: 'Signika', sans-serif;
+	font-weight: 700;
+	color: #fff;
+	background-color: #466baf;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+	border-color: #fff;
+	color: #fff;
+	background-color: #466baf;
+}
+
+/* Hide other buttons initially */
+#play,
+#bannar_coming,
+#balloons_flying,
+#cake_fadein,
+#light_candle,
+#wish_message,
+#story {
+	display: none;
+}
+/* ✅ Mobile Responsive Fixes */
+@media only screen and (max-width: 600px) {
+
+  /* 🎈 Balloons - Smaller size for mobile */
+  .balloons {
+    width: 50px !important;
+    height: 90px !important;
+    background-size: 50px 90px !important;
+  }
+  .balloons h2 {
+    font-size: 18px !important;
+    margin-top: 8px !important;
+  }
+
+  /* 💬 Message section - smaller and more visible */
+  .message {
+    top: 120px !important;
+    right: 20px !important;
+    width: 85% !important;
+  }
+  .message p {
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 🍰 Cake - center & resize for mobile */
+  .cake {
+    width: 220px !important;
+    height: 220px !important;
+    margin-left: -110px !important;
+  }
+
+  /* 🎉 Banner - shrink a bit */
+  .bannar {
+    max-width: 70% !important;
+  }
+
+  /* 🔘 Buttons - adjust spacing */
+  .btn-primary {
+    padding: 8px !important;
+    font-size: 14px !important;
+  }
+}
